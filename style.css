@@ -1,3 +1,7 @@
+/* =========================
+   RESET & BASE
+========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +24,9 @@ a {
   text-decoration: none;
 }
 
-/* COMMON */
+/* =========================
+   COMMON
+========================= */
 
 .tag {
   color: #7ee7ff;
@@ -43,7 +49,9 @@ a {
   color: #071018;
 }
 
-/* HOME HERO */
+/* =========================
+   HOME HERO
+========================= */
 
 .hero {
   min-height: 100vh;
@@ -97,7 +105,9 @@ a {
   font-size: 19px;
 }
 
-/* PROFILE */
+/* =========================
+   PROFILE CARD
+========================= */
 
 .profile-card {
   text-align: center;
@@ -114,7 +124,7 @@ a {
   border: 3px solid rgba(126, 231, 255, 0.25);
   box-shadow:
     0 0 40px rgba(126, 231, 255, 0.15),
-    0 0 80px rgba(49, 71, 255, 0.10);
+    0 0 80px rgba(49, 71, 255, 0.1);
 }
 
 .photo-wrap img {
@@ -124,7 +134,7 @@ a {
 }
 
 .profile-card h2 {
-  color: white;
+  color: #ffffff;
   font-size: 30px;
   font-weight: 800;
   line-height: 1.1;
@@ -151,7 +161,9 @@ a {
   margin: 26px auto 0;
 }
 
-/* SCROLL */
+/* =========================
+   SCROLL INDICATOR
+========================= */
 
 .scroll-down {
   position: absolute;
@@ -188,7 +200,9 @@ a {
   }
 }
 
-/* HOME LENS SECTION */
+/* =========================
+   HOME LENS SECTION
+========================= */
 
 .lens-section {
   min-height: 100vh;
@@ -262,7 +276,7 @@ a {
 }
 
 .lens-card h3 {
-  color: white;
+  color: #ffffff;
   font-size: 30px;
   margin: 18px 0 12px;
 }
@@ -272,7 +286,9 @@ a {
   font-size: 16px;
 }
 
-/* INNER PAGES */
+/* =========================
+   INNER PAGE LAYOUT
+========================= */
 
 .page {
   min-height: 100vh;
@@ -328,6 +344,10 @@ a {
   letter-spacing: -1px;
 }
 
+/* =========================
+   CARDS & GRIDS
+========================= */
+
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -371,19 +391,174 @@ a {
   max-width: 900px;
 }
 
-.timeline-item {
-  border-left: 4px solid #7ee7ff;
-  padding-left: 25px;
-  margin-bottom: 35px;
+/* =========================
+   RESEARCH ROADMAP
+========================= */
+
+.roadmap-section {
+  margin-bottom: 120px;
 }
 
-.timeline-item h3 {
-  font-size: 26px;
+.roadmap-header {
+  margin-bottom: 70px;
+  max-width: 900px;
 }
 
-.timeline-item p {
+.roadmap-header h2 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.roadmap-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 80px;
+  align-items: start;
+}
+
+.roadmap-details {
+  position: relative;
+}
+
+.journey-group {
+  position: relative;
+  padding: 34px 34px 34px 46px;
+  border-radius: 30px;
+  margin-bottom: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(126, 231, 255, 0.16);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.journey-group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.vit-theme::before {
+  background: radial-gradient(circle at top left, #7357ff, transparent 45%);
+}
+
+.signify-theme::before {
+  background: radial-gradient(circle at top left, #00e0ff, transparent 45%);
+}
+
+.ncsu-theme::before {
+  background: radial-gradient(circle at top left, #cc0000, transparent 45%);
+}
+
+.journey-org {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 34px;
+}
+
+.journey-org span {
+  color: #7ee7ff;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.journey-org h3 {
+  color: #ffffff;
+  font-size: 34px;
+  margin-top: 8px;
+}
+
+.roadmap-step {
+  position: relative;
+  z-index: 2;
+  padding-left: 45px;
+  margin-bottom: 70px;
+}
+
+.roadmap-step:last-child {
+  margin-bottom: 0;
+}
+
+.roadmap-step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #7ee7ff;
+  box-shadow: 0 0 20px rgba(126, 231, 255, 0.6);
+}
+
+.roadmap-step::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 24px;
+  width: 2px;
+  height: calc(100% + 55px);
+  background: rgba(126, 231, 255, 0.22);
+}
+
+.roadmap-step:last-child::after {
+  display: none;
+}
+
+.roadmap-step span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #7ee7ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.roadmap-step h3 {
+  color: #ffffff;
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.roadmap-step p {
   color: #c8d0e0;
+  max-width: 760px;
+  font-size: 16px;
+  line-height: 1.8;
 }
+
+.roadmap-track {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 30px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(126, 231, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.roadmap-track a {
+  color: #aeb7c7;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.roadmap-track a:hover {
+  color: #7ee7ff;
+  transform: translateX(6px);
+}
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
   text-align: center;
@@ -399,7 +574,9 @@ a {
   color: #c8d0e0;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 1024px) {
   .hero-layout {
@@ -421,6 +598,18 @@ a {
 
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .roadmap-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .roadmap-track {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
   }
 }
 
@@ -567,6 +756,35 @@ a {
 
   .story-card h3 {
     font-size: 24px;
+  }
+
+  .roadmap-header {
+    margin-bottom: 45px;
+  }
+
+  .journey-group {
+    padding: 26px;
+  }
+
+  .journey-org h3 {
+    font-size: 28px;
+  }
+
+  .roadmap-step {
+    padding-left: 32px;
+    margin-bottom: 60px;
+  }
+
+  .roadmap-step h3 {
+    font-size: 23px;
+  }
+
+  .roadmap-step p {
+    font-size: 15px;
+  }
+
+  .roadmap-track {
+    display: none;
   }
 }
 
